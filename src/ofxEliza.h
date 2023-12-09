@@ -104,11 +104,11 @@ public:
     ~ofxEliza();
     
     // Loading database into memory
-    string  init(string _scriptFile = "script.txt", string _logFile = "log.txt"); // Do load and start()
-    void    load( string _scriptFile = "script.txt");
-    string  start( string _logFile = "log.txt");
-    void    save( string _scriptFile = "script.txt", string _unknownFile = "unknown.txt");
-	void    saveUnknownSentences( string _unknownFile = "unknown.txt");
+    string  init(string _scriptFile = "eliza/script.txt", string _logFile = "eliza/log.txt"); // Do load and start()
+    void    load( string _scriptFile = "eliza/script.txt");
+    string  start( string _logFile = "eliza/log.txt");
+    void    save( string _scriptFile = "eliza/script.txt", string _unknownFile = "eliza/unknown.txt");
+	void    saveUnknownSentences( string _unknownFile = "eliza/unknown.txt");
     
     string  ask(string _inputString);
     
