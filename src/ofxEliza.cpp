@@ -25,7 +25,7 @@ string ofxEliza::init(string _scriptFile, string _logFile){
 };
 
 void ofxEliza::load(string _scriptFile){
-    std::fstream fin( ofToDataPath(_scriptFile).c_str() , std::ios::in);
+    std::fstream fin( _scriptFile.c_str() , std::ios::in);
     if(fin.fail()) {
         throw std::string("can't open script file");
     }
@@ -125,7 +125,7 @@ void ofxEliza::load(string _scriptFile){
 // the content of the dabase to the script file.
 void ofxEliza::save( string _scriptFile, string _unknownFile ){
     if( m_bNewData ) {
-        scriptfile.open( ofToDataPath(_scriptFile).c_str(), std::ios::out);
+        scriptfile.open( _scriptFile.c_str(), std::ios::out);
         if(scriptfile.fail()) {
             throw std::string("Can't save data");
         }
@@ -163,7 +163,7 @@ void ofxEliza::save( string _scriptFile, string _unknownFile ){
 string ofxEliza::start(string _logFile){
     time_t ltime;
 	time(&ltime);
-	logfile.open( ofToDataPath(_logFile).c_str(), std::ios::out | std::ios::app);
+	logfile.open( _logFile.c_str(), std::ios::out | std::ios::app);
 	if(logfile.fail()) {
 		throw std::string("can't save conversation log");
 	}
@@ -617,7 +617,7 @@ void ofxEliza::print_current_data() {
 void ofxEliza::saveUnknownSentences(string _unknownFile) {
 	size_t nSize = unknownSentences.size();
 	if(nSize > 0) {
-		std::fstream outfile( ofToDataPath(_unknownFile).c_str() , std::ios::out | std::ios::app);
+		std::fstream outfile( _unknownFile.c_str() , std::ios::out | std::ios::app);
 		if(outfile.fail()) {
 			throw std::string("can't save unknown sentences");
 		}

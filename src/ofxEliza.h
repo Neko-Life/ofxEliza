@@ -63,8 +63,14 @@
 #pragma once
 //#pragma warning(disable:4786)
 
-#include "ofMain.h"
+#include <stack>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <fstream>
 #include "Tokenizer.h"
+
+using string = std::string;
 
 typedef struct {
 	vstring keywords;
